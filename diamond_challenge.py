@@ -54,11 +54,12 @@ def validate_input(letter):
     return True
 
 # Main function starts here
-if len(sys.argv) == 2:
-    base_letter = sys.argv[1] 
-else:
-    if len(sys.argv) != 1:
-        print("\nToo many arguments provided on the command line!\n")
-    base_letter = raw_input("Enter a letter to create the diamond: ")
+if __name__ == '__main__':
+    if len(sys.argv) == 2:
+        base_letter = sys.argv[1] 
+    else:
+        if len(sys.argv) != 1:
+            print("\nToo many arguments provided on the command line!\n")
+        base_letter = raw_input("Enter a letter to create the diamond: ")
 
-print_diamond(base_letter.strip('\'').strip('\"')) #Strip off quotes if they are included.
+    print_diamond(base_letter.strip('\'').strip('\"')) #Strip off quotes if they are included.
