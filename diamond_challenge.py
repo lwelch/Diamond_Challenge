@@ -47,10 +47,18 @@ def validate_input(letter):
 
     If the input is valid, validate_input returns True. Otherwise, it returns False.
     """
-    if not isinstance(letter, str) or len(letter) > 1 \
+    if not isinstance(letter, str) or len(letter) != 1 \
     or ord(letter) < ord('A') or ord(letter) > ord('Z'):
-        print('Invalid input! Please input a capital letter (A-Z).')
+        print("\nInvalid input! Please input a single capital letter (A-Z).\n")
         return False
     return True
 
-print_diamond('A')
+# Main function starts here
+if len(sys.argv) == 2:
+    base_letter = sys.argv[1] 
+else:
+    if len(sys.argv) != 1:
+        print("\nToo many arguments provided on the command line!\n")
+    base_letter = raw_input("Enter a letter to create the diamond: ")
+
+print_diamond(base_letter.strip('\'').strip('\"')) #Strip off quotes if they are included.
