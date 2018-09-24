@@ -1,0 +1,5 @@
+
+*.pyc
+.vscode/.ropeproject/config.py
+.vscode/.ropeproject/objectdb
+.DS_Store

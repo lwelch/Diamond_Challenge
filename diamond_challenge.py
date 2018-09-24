@@ -1,22 +1,56 @@
 import sys
 
 def print_diamond(letter):
-    letter_valide = validate_input(letter)
-    if letter_valide:
-        a_ascii = ord('A')
-        rows = ord(letter) - a_ascii + 1
+    """
+    print_diamond takes the an input of a capital letter, and prints a diamond of letters starting with 'A' at the top
+    and bottom point, and the provided letter at the right and left points. 
+    
+    For example, if 'D' is provided, the following will be printed:
+        A
+       B B
+      C   C
+     D     D
+      C   C
+       B B
+        A
 
-        for x in list(range(rows)) + list(reversed(range(rows-1))):
-            letter = chr(a_ascii+x)
-            if x == 0:
-                print('{: <{w1}}{letter}'.format('', w1=rows-1, letter=letter))
-            else:
-                print('{: <{w1}}{letter}{: <{w2}}{letter}'.format('', '', w1=rows-x-1, letter=letter, w2=x*2-1))
+    If 'A' is input, a diamond cannot be generated, so a single line with 'A' is printed.
+    """
+    letter_valid = validate_input(letter)
+    if letter_valid:
+        diamond = build_diamond(letter)
+        print('\n'.join(diamond))
+
+def build_diamond(letter):
+    """
+    build_diamond is used to generate the list of strings needed to print the diamond structure.
+    It takes a single argument of a letter (in string format), and returns a list of strings.
+
+    This list of strings can then be printed with newline characters (using join) to output the
+    diamond structure.
+    """
+    a_ascii = ord('A')
+    rows = ord(letter) - a_ascii + 1
+    diamond = []
+
+    for x in list(range(rows)) + list(reversed(range(rows-1))):
+        if x == 0:
+            diamond.append('{: <{w1}}{letter}'.format('', w1=rows-1, letter=chr(a_ascii+x)))
+        else:
+            diamond.append('{: <{w1}}{letter}{: <{w2}}{letter}'.format('', '', w1=rows-x-1, letter=chr(a_ascii+x), w2=x*2-1))
+    return diamond
 
 def validate_input(letter):
-    if ord(letter) < ord('A') or ord(letter) > ord('Z'):
+    """
+    validate_input has an input of a string. It check that the string length is 1 (a single letter)
+    and verifies that the letter is capital.
+
+    If the input is valid, validate_input returns True. Otherwise, it returns False.
+    """
+    if not isinstance(letter, str) or len(letter) > 1 \
+    or ord(letter) < ord('A') or ord(letter) > ord('Z'):
         print('Invalid input! Please input a capital letter (A-Z).')
         return False
     return True
 
-print_diamond('Z')
+print_diamond('A')
