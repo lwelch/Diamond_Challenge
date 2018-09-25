@@ -17,6 +17,8 @@ The diamond_challenge module takes a letter as an input, either on the command l
 the keybord after the start of the script, and prints a diamond, starting with 'A' at the top,
 and the supplied letter at the widest point.
 
+It was developed using Python 2.7, but also works with Python 3.
+
 The following is an example usage for supplying a letter
 on the command line:
 ```
@@ -106,3 +108,5 @@ Automated tests cases are provided via shell and batch files which can
 be run on Unix and Windows machines repsectively. They generate an example output in the file test_output.txt
 with some interesting test cases. The output of the automated test cases is provided, but will
 be regnerated with each run of the shell/batch scripts.
+
+###### Copyright (C) 2018, Luke Welch 

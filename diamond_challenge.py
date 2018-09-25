@@ -23,6 +23,11 @@ E       E
 
 import sys
 
+__author__ = "Luke Welch"
+__copyright__ = "Copyright (C) 2018 Luke Welch"
+__license__ = "Apache License"
+__version__ = "1.0"
+
 def print_diamond(letter):
     """
     :param str letter: A capital letter, which will be used as
@@ -70,11 +75,11 @@ def build_diamond(validated_letter):
     rows = ord(validated_letter) - a_ascii + 1
     diamond = []
 
-    for x in list(range(rows)) + list(reversed(range(rows-1))):
-        if x == 0:
-            diamond.append('{: <{w1}}{current_letter}'.format('', w1=rows-1, current_letter=chr(a_ascii+x)))
+    for row in list(range(rows)) + list(reversed(range(rows-1))):
+        if row == 0:
+            diamond.append('{: <{w1}}{current_letter}'.format('', w1=rows-1, current_letter=chr(a_ascii+row)))
         else:
-            diamond.append('{: <{w1}}{current_letter}{: <{w2}}{current_letter}'.format('', '', w1=rows-x-1, current_letter=chr(a_ascii+x), w2=x*2-1))
+            diamond.append('{: <{w1}}{current_letter}{: <{w2}}{current_letter}'.format('', '', w1=rows-row-1, current_letter=chr(a_ascii+row), w2=row*2-1))
     return diamond
 
 def validate_input(input_string):

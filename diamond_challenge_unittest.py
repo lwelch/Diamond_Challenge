@@ -1,4 +1,14 @@
+"""
+Unit Testing module for the python script diamond_challenge.py 
+"""
+
 import unittest
+
+__author__ = "Luke Welch"
+__copyright__ = "Copyright (C) 2018 Luke Welch"
+__license__ = "Apache License"
+__version__ = "1.0"
+
 
 from diamond_challenge import build_diamond, validate_input
 
