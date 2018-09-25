@@ -1,5 +1,18 @@
 # Diamond Challenge
 
+## Table of Contents
+1. Introduction
+2. Functions
+
+   2.1 print_diamond()  
+   2.2 build_diamond()  
+   2.3 validate_input()  
+3. Unit Tests
+4. Automated Test Cases
+
+---
+
+## 1. Introduction
 The diamond_challenge module takes a letter as an input, either on the command line, or via the
 the keybord after the start of the script, and prints a diamond, starting with 'A' at the top,
 and the supplied letter at the widest point.
@@ -31,8 +44,8 @@ If a valid input is given, the program will print the diamond. If not, an error 
 
 ---
 
-## Functions:
-### **print_diamond(letter):**
+## 2. Functions:
+### **2.1 print_diamond(letter):**
 >**Inputs:** *str* letter: A capital letter, which will be used as
 the widest point of the diamond.
 
@@ -56,7 +69,7 @@ If 'A' is input, a diamond cannot be generated, so a single line with 'A' is pri
 
 ---
 
-### **build_diamond(letter):**
+### **2.2 build_diamond(letter):**
 >**Inputs:** *str* validated_letter: A capital letter, that will be used to generate the
 list of strings needed to print out the diamond.
 
@@ -71,7 +84,7 @@ diamond structure.
 
 ---
 
-### **validate_input(input_string):**
+### **2.3 validate_input(input_string):**
 >**Inputs:** *str* input_string: A string input to the program for validation
 that it will work wiht the diamond_challenge program.
 
@@ -79,9 +92,17 @@ that it will work wiht the diamond_challenge program.
 *False* if cannot be used.
 
 ---
-## Unit Tests
+## 3. Unit Tests
 Unit tests are provided with the program to test the functionality.
 They can be run from the command line by entering:
 ```
 python -m unittest diamond_challenge_unittest
 ```
+
+---
+
+## 4. Automated Test Cases
+Automated tests cases are provided via shell and batch files which can 
+be run on Unix and Windows machines repsectively. They generate an example output in the file test_output.txt
+with some interesting test cases. The output of the automated test cases is provided, but will
+be regnerated with each run of the shell/batch scripts.

@@ -99,6 +99,7 @@ if __name__ == '__main__':
     else:
         if len(sys.argv) != 1:
             print("\nToo many arguments provided on the command line!\n")
-        base_letter = raw_input("Enter a letter to create the diamond: ")
+        base_letter = raw_input("Enter a capital letter to create the diamond: ")
+        print("\n")
 
     print_diamond(base_letter.strip('\'').strip('\"')) #Strip off quotes if they are included.
